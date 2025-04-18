@@ -13,7 +13,16 @@
 CURRENT_USER=$(stat -f %Su /dev/console)
 USER_ID=$(id -u "$CURRENT_USER")
 
-############
+# Check sudo status
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root, press enter to exit"
+  read
+  exit
+else
+  echo "Running as root."
+fi
+
+###########
 # MENU BAR #
 ############
 
@@ -178,8 +187,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
 # Symlink .zshrc to home folder
-
-ln -s .zshrc ~/.zshrc
+ln -s ~/dotfiles/.zshrc ~/.zshrc
 
 #################
 # Neovim config #
