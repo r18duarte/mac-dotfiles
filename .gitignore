@@ -1,6 +1,20 @@
-# .gitignore
-*.swp          # vim swap files
-*.bak          # backup files
-*.log          # log files
-.DS_Store      # macOS metadata files
+# Ignore .DS_Store files (macOS)
+.DS_Store
 
+# Ignore Vim swap files
+*.swp
+
+# Ignore Vim backup files
+*.bak
+*.swp
+*.swo
+*.un~ 
+
+# Ignore Vim's undo files
+*.undo
+
+# Ignore Vim's session files
+Session.vim
+
+# Ignore any other temporary files (like log files)
+*.log
