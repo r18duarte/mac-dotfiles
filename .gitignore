@@ -1,0 +1,6 @@
+# .gitignore
+*.swp          # vim swap files
+*.bak          # backup files
+*.log          # log files
+.DS_Store      # macOS metadata files
+
