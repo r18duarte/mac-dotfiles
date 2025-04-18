@@ -15,9 +15,9 @@ USER_ID=$(id -u "$CURRENT_USER")
 
 # Check sudo status
 if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root, press enter to exit"
+  echo "Please run as root, press enter to authorize."
   read
-  exit
+  exec sudo bash "$0" "$@"
 else
   echo "Running as root."
 fi
