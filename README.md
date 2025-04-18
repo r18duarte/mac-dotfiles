@@ -12,6 +12,34 @@ This repository contains a macOS setup script that installs essential tools and 
 
 ---
 
+## Configs added
+
+### Sys
+- **TouchID for sudo**
+- Enable sound when plugging in device
+- Disable Time Machine pop-up when a device is connected
+- Enable auto updates
+- Enable Location Services
+- Set auto timezones and set it with location
+- Activity Monitor: Show data in graph
+- Uncheck 'Reopen windows when logging back in'
+- Enable firewall
+- Disable PowerNap and Wake for Network Access
+- Disable Password hint on login screen
+
+### Finder
+- New finder windows now point to ~/
+- Show path
+- Show status bar
+- Show collumns by default
+- Disable creating -DS_Store for network and removable devices
+- Remove recent apps from dock
+
+### Menu Bar
+- Removed Siri
+- Added battery percentage
+
+
 ## 🔧 Tools Installed
 
 The following tools and utilities will be installed by the setup script:
@@ -41,7 +69,7 @@ The following tools and utilities will be installed by the setup script:
 
 ---
 
-## 🛠 Bootstrap (First-time Setup)
+## 🛠 Download git clone and exec
 
 If you're setting up a **fresh macOS install** and **don’t have Homebrew or Git** installed, follow these steps to get everything up and running:
 
@@ -56,7 +84,7 @@ brew install git
 mkdir -p ~/dotfiles
 git clone https://github.com/r18duarte/mac-dotfiles.git ~/dotfiles
 chmod +x ~/dotfiles/macsetup.sh
-~/dotfiles/macsetup.sh
+sudo /dotfiles/macsetup.sh
 ```
 
 
