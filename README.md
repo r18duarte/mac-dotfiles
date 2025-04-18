@@ -1,6 +1,6 @@
 # Setup Mac RD - Apr 2025
 
-This repository contains a macOS setup script that installs essential tools and configures macOS to fit your daily workflow. It's designed to be run on a fresh macOS installation or anytime you need to quickly set up your environment.
+This repository contains a macOS setup script that installs essential tools and configures macOS. It's designed to be run on a fresh macOS installation or anytime you need to update and make sure we still have the original setup running.
 
 ---
 
@@ -9,6 +9,7 @@ This repository contains a macOS setup script that installs essential tools and 
 1. Tools Installed
 2. Bootstrap (First-time Setup)
 3. Full Download (Clone & Execute)
+
 ---
 
 ## 🔧 Tools Installed
@@ -19,17 +20,15 @@ The following tools and utilities will be installed by the setup script:
     
 - **Git** – Version control system
     
+- **GH** - Github Authentication tool
+
 - **Vim** – Text editor
     
-- **zsh** – Default shell (if not already set)
-    
-- **wget** – Download utility
+- **oh-my-zsh** – Default shell but better 
     
 - **Google Chrome** – Web browser
     
 - **iTerm2** – Terminal replacement
-    
-- **Visual Studio Code** – Code editor
     
 - **Android Platform Tools** – For managing Android devices (`adb`, `fastboot`)
     
@@ -46,13 +45,18 @@ The following tools and utilities will be installed by the setup script:
 
 If you're setting up a **fresh macOS install** and **don’t have Homebrew or Git** installed, follow these steps to get everything up and running:
 
-**Run the following command** in your terminal to install Homebrew, Git, and clone the repo:
+**Run the following command** in your terminal to install Homebrew, Git, clone the repo and execute setup script:
+
+**Default folder is ~/dotfiles/**
+
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-git clone https://github.com/yourusername/dotfiles.git ~/dotfiles && \
-cd ~/dotfiles && chmod +x setup.sh && ./setup.sh
-
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git
+mkdir -p ~/dotfiles
+git clone https://github.com/r18duarte/mac-dotfiles.git ~/dotfiles
+chmod +x ~/dotfiles/macsetup.sh
+~/dotfiles/macsetup.sh
 ```
 
 
@@ -62,19 +66,8 @@ cd ~/dotfiles && chmod +x setup.sh && ./setup.sh
     
 2. **Installs Git** — version control system (if it’s not already installed)
     
-3. **Clones this repo** — `dotfiles` into `~/.dotfiles`
+3. **Clones this repo** — `dotfiles` into `~/dotfiles`
     
-4. **Runs `setup.sh`** — Installs all the tools listed in the "Tools Installed" section
+4. **Runs `macsetup.sh`** — Installs all the tools listed in the "Tools Installed" section
 
-
-## 💻 Full Download (Clone & Execute)
-
-If you already have **Homebrew** and **Git** installed on your Mac, or after you’ve run the bootstrap command, you can directly clone this repo and execute the setup:
-
-1. **Clone the repo:**
-```
-git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-chmod +x setup.sh && ./setup.sh
-```
 
