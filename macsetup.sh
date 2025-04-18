@@ -177,6 +177,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Install powerline10k
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
+# Symlink .zshrc to home folder
+
+ln -s .zshrc ~/.zshrc
+
 #################
 # Neovim config #
 #################
