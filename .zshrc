@@ -110,6 +110,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Add brew env
+HOMEBREW_NO_ENV_HINTS=1
+# Make nvim as man page handler
+if [ -n "nvim" ]; then
+  export MANPAGER="/usr/local/bin/nvim -c 'Man!' -o -"
+fi
+
 alias ls='ls -lha'
 alias ..='cd ..'
 alias ...='cd../..'
