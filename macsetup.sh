@@ -55,6 +55,10 @@ sudo -u "$CURRENT_USER" defaults write com.apple.finder FXEnableExtensionChangeW
 # Always show scrollbars. Possible values: `WhenScrolling`, `Automatic` and `Always`
 sudo -u "$CURRENT_USER" defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 
+# Always show hidden files
+defaults write com.apple.finder AppleShowAllFiles -boolean true
+killall Finder
+
 # Expand print panel by default
 sudo -u "$CURRENT_USER" defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 sudo -u "$CURRENT_USER" defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
