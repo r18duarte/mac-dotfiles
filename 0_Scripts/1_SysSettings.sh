@@ -56,7 +56,7 @@ sudo -u "$CURRENT_USER" defaults write com.apple.finder FXEnableExtensionChangeW
 sudo -u "$CURRENT_USER" defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 
 # Always show hidden files
-defaults write com.apple.finder AppleShowAllFiles -boolean true
+sudo -u "$CURRENT_USER" defaults write com.apple.finder AppleShowAllFiles -boolean true
 killall Finder
 
 # Expand print panel by default
@@ -133,19 +133,13 @@ sudo -u "$CURRENT_USER" defaults write com.apple.loginwindow TALLogoutSavesState
 pmset -a powernap 0
 pmset -a womp 0
 
-# Stop macOS 15 Sequoia monthly screen recording prompts for Chrome, Slack, Zoom, Teams and TeamViewer
-defaults write "/Users/$CURRENT_USER/Library/Group Containers/group.com.apple.replayd/ScreenCaptureApprovals.plist" "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" -date "3024-09-22 12:12:12 +0000"
-defaults write "/Users/$CURRENT_USER/Library/Group Containers/group.com.apple.replayd/ScreenCaptureApprovals.plist" "/Applications/Slack.app/Contents/MacOS/Slack" -date "3024-09-22 12:12:12 +0000"
-defaults write "/Users/$CURRENT_USER/Library/Group Containers/group.com.apple.replayd/ScreenCaptureApprovals.plist" "/Applications/zoom.us.app/Contents/MacOS/zoom.us" -date "3024-09-22 12:12:12 +0000"
-defaults write "/Users/$CURRENT_USER/Library/Group Containers/group.com.apple.replayd/ScreenCaptureApprovals.plist" "/Applications/Microsoft Teams.app/Contents/MacOS/MSTeams" -date "3024-09-22 12:12:12 +0000"
-defaults write "/Users/$CURRENT_USER/Library/Group Containers/group.com.apple.replayd/ScreenCaptureApprovals.plist" "/Applications/TeamViewer.app/Contents/MacOS/TeamViewer" -date "3024-09-22 12:12:12 +0000"
-
 ################
 # LOGIN SCREEN #
 ################
 
 # Disable password hints
 defaults write com.apple.loginwindow RetriesUntilHint -int 0
+
 
 ########
 # SUDO #
@@ -175,34 +169,34 @@ fi
 # Brew was previously installed as the setup requires it
 
 # Update brew
-brew upgrade
-
-# Brew install apps from file
-xargs brew install <brew_apps.txt
-
+#brew upgrade
+#
+## Brew install apps from file
+#xargs brew install <brew_apps.txt
+#
+###################
+## Setup terminal #
+###################
+#
+## Install oh-my-zsh
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#
+## Install powerline10k
+#echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+#
+## Symlink .zshrc to home folder
+#ln -s ~/dotfiles/.zshrc ~/.zshrc
+#
 ##################
-# Setup terminal #
+## Neovim config #
 ##################
-
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Install powerline10k
-echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-
-# Symlink .zshrc to home folder
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-
-#################
-# Neovim config #
-#################
-
-# backup default config
-mv ~/.config/nvim{,.bak}
-
-# symlink to nvim config folder
-ln -s ~/dotfiles/nvim ~/.config/nvim
-
+#
+## backup default config
+#mv ~/.config/nvim{,.bak}
+#
+## symlink to nvim config folder
+#ln -s ~/dotfiles/nvim ~/.config/nvim
+#
 ####################
 # RESTART SERVICES #
 ####################

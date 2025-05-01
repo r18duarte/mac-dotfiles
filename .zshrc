@@ -135,3 +135,4 @@ source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
