@@ -15,6 +15,7 @@ This repository contains a macOS setup script that installs essential tools and 
 ## Configs added
 
 ### Sys
+
 - **TouchID for sudo**
 - Enable sound when plugging in device
 - Disable Time Machine pop-up when a device is connected
@@ -28,6 +29,7 @@ This repository contains a macOS setup script that installs essential tools and 
 - Disable Password hint on login screen
 
 ### Finder
+
 - New finder windows now point to ~/
 - Show path
 - Show status bar
@@ -36,36 +38,35 @@ This repository contains a macOS setup script that installs essential tools and 
 - Remove recent apps from dock
 
 ### Menu Bar
+
 - Removed Siri
 - Added battery percentage
-
 
 ## 🔧 Tools Installed
 
 The following tools and utilities will be installed by the setup script:
 
 - **Homebrew** – The macOS package manager
-    
+
 - **Git** – Version control system
-    
+
 - **GH** - Github Authentication tool
 
 - **Vim** – Text editor
-    
-- **oh-my-zsh** – Default shell but better 
-    
+
+- **oh-my-zsh** – Default shell but better
+
 - **Google Chrome** – Web browser
-    
+
 - **iTerm2** – Terminal replacement
-    
+
 - **Android Platform Tools** – For managing Android devices (`adb`, `fastboot`)
-    
+
 - **Android File Transfer** – GUI app for file transfers from Android devices
-    
+
 - **Rectangle** – Window manager
-    
+
 - **and more...** – see the script for all installed tools
-    
 
 ---
 
@@ -77,7 +78,6 @@ If you're setting up a **fresh macOS install** and **don’t have Homebrew or Gi
 
 **Default folder is ~/dotfiles/**
 
-
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install git
@@ -87,15 +87,20 @@ chmod +x ~/dotfiles/macsetup.sh
 sudo /dotfiles/macsetup.sh
 ```
 
-
-### What this command does:
+### What this command does
 
 1. **Installs Homebrew** — macOS package manager
-    
+
 2. **Installs Git** — version control system (if it’s not already installed)
-    
+
 3. **Clones this repo** — `dotfiles` into `~/dotfiles`
-    
+
 4. **Runs `macsetup.sh`** — Installs all the tools listed in the "Tools Installed" section
 
+## Apps
 
+- TG Pro
+- Dropover
+- Raycast
+- HidenBar (appstore)
+- 
