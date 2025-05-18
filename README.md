@@ -103,4 +103,6 @@ sudo /dotfiles/macsetup.sh
 - Dropover
 - Raycast
 - HidenBar (appstore)
-- 
+- keka (uncompresser)
+- neardrop (github)
+- cleanmymac
