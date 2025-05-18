@@ -106,3 +106,4 @@ sudo /dotfiles/macsetup.sh
 - keka (uncompresser)
 - neardrop (github)
 - cleanmymac
+- latest(https://max.codes/latest/)
